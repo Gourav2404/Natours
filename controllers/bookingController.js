@@ -9,8 +9,8 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
 
      // 1) Get the currently booked tour
     const tour = await Tour.findById(req.params.tourId);
-    console.log(tour.name);
-    console.log(`${req.protocol}://${req.get('host')}/`) 
+    // console.log(tour.name);
+    // console.log(`${req.protocol}://${req.get('host')}/`) 
 
 
     // 2) Create checkout session

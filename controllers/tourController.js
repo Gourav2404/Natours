@@ -196,7 +196,6 @@ exports.getToursWithin =catchAsync(async (req, res, next)=> {
         );
     };
 
-    console.log( distance, latlang, unit);
 
     const tours = await Tour.find({
         startLocation: { $geoWithin: { $centerSphere: [[lang , lat] , radius]}}
