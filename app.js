@@ -19,11 +19,11 @@ const bookingRouter = require('./routes/bookingRoutes')
 
 const app = express();
 
+app.enable('trust proxy');
+
 app.set('view engine' , 'pug');
 app.set('views' , path.join(__dirname , 'views'));
 //1)Global MIDDLEWARES
-
-app.enable('trust proxy');
 
 //serving static files
 app.use(express.static(path.join(__dirname ,'public')));
