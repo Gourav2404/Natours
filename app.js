@@ -7,7 +7,7 @@ const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean')
 const hpp = require('hpp')
 const cookieParser = require('cookie-parser')
-const bodyParser = require('body-parser')
+// const bodyParser = require('body-parser')
 const compression = require('compression')
 const cors = require('cors')
 
@@ -18,7 +18,7 @@ const userRouter = require('./routes/userRoutes');
 const reviewRouter = require('./routes/reviewRoutes');
 const viewRouter = require('./routes/viewRoutes')
 const bookingRouter = require('./routes/bookingRoutes')
-const bookingController = require('./controllers/bookingController')
+// const bookingController = require('./controllers/bookingController')
 
 const app = express();
 
@@ -71,11 +71,11 @@ const limiter = rateLimit({
 app.use('/api' , limiter)
 
 // Stripe webhook, BEFORE body-parser, because stripe needs the body as stream
-app.post(
-    '/webhook-checkout',
-    bodyParser.raw({ type: 'application/json' }),
-    bookingController.webhookCheckout
-  );
+// app.post(
+//     '/webhook-checkout',
+//     bodyParser.raw({ type: 'application/json' }),
+//     bookingController.webhookCheckout
+//   );
 
 // Body parser , reading data from body into req.body
 app.use(express.json({limit : '10kb'}));
