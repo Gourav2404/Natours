@@ -23,7 +23,7 @@ mongoose.connect(DB , {
 })
 
 const port = process.env.port || 3000;
-app.listen(port , () => {
+app.listen(port , "0.0.0.0" , () => {
     console.log(`App is listtening to the port ${port}`);
 });
 
