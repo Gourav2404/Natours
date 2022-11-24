@@ -22,7 +22,7 @@ mongoose.connect(DB , {
     console.log('Database Connected Successfullyy');
 })
 
-const port = process.env.port || 8000;
+const port = process.env.PORT || 8000;
 app.listen(port , "0.0.0.0" , () => {
     console.log(`App is listtening to the port ${port}`);
 });
